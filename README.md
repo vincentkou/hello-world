@@ -3,20 +3,20 @@
 ## 如果是文件路径的进行字符截断可以用basename和dirname这两个工具
 basename可以从一个文件路径中截一个文件名
 
-```
+``` sh
 $ basename /root/lnmp/lnmp_install.sh 
 > lnmp_install.sh
 ```
 dirname可以从一个文件路径中截到一个目录路径
 
-~~~
+``` sh
 $ dirname /root/lnmp/lnmp_install.sh
 > /root/lnmp
-~~~
+```
 ## 不使用外部工具进行字符截断
 bash有自带的功能来对变量进行字符截断，一般使用”#”， “##”， “%%”， “%”， “*” 组合来实现。
 
-```
+``` sh
 $ teststring=www.linuxeye.com
 $ echo ${teststring#*.} 
 linuxeye.com 
@@ -36,13 +36,14 @@ www
 
 > * “*”统配符
 
+```sh
 	$ echo ${dir##*/} 
 	lnmp_install.sh 
 	$ echo ${dir%/*} 
 	/root/lnmp 
 	$ echo ${dir##*.} 
 	sh
-
+```
 
 ## 不利用工具取文件名和目录
 ```sh
